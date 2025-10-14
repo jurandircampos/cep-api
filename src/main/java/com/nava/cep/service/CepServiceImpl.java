@@ -51,6 +51,11 @@ public class CepServiceImpl implements ICepService {
                     .bairro((String) dados.get("bairro"))
                     .cidade((String) dados.get("localidade"))
                     .uf((String) dados.get("uf"))
+                    .regiao((String) dados.get("regiao"))
+                    .ibge((String) dados.get("ibge"))
+                    .gia((String) dados.get("gia"))
+                    .ddd((String) dados.get("ddd"))
+                    .siafi((String) dados.get("siafi"))
                     .dataConsulta(LocalDateTime.now())
                     .build();
 

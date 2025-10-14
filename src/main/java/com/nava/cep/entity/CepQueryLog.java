@@ -32,6 +32,12 @@ public class CepQueryLog {
     private String cidade;
     private String uf;
 
+    private String regiao;
+    private String ibge;
+    private String gia;
+    private String ddd;
+    private String siafi;
+    
     private LocalDateTime dataConsulta;
     
     private String erro;
