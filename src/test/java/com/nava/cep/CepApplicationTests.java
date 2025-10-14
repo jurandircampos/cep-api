@@ -9,5 +9,4 @@ class CepApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

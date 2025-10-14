@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/ws/18040260/json/" 
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "cep": "18040-260",
+      "logradouro": "Rua Bernardino Telles de Medeiros",
+      "complemento": "",
+      "unidade": "",
+      "bairro": "Vila São João",
+      "localidade": "Sorocaba",
+      "uf": "SP",
+      "estado": "São Paulo",
+      "regiao": "Sudeste",
+      "ibge": "3552205",
+      "gia": "6695",
+      "ddd": "15",
+      "siafi": "7145"
+    }
+  }
+}

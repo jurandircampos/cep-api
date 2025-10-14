@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/ws/99999999/json/"
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "erro",
+      "mensagem": "CEP não encontrado ou inválido",
+      "cep": "99999999"
+    }
+  }
+}

@@ -70,7 +70,15 @@
     		<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
     		<version>2.6.0</version>
 		</dependency>
+		<!-- WireMock para mockar API externa -->
+		<dependency>
+		    <groupId>org.wiremock</groupId>
+		    <artifactId>wiremock-standalone</artifactId>
+		    <version>3.6.0</version>
+		    <scope>test</scope>
+		</dependency>
     </dependencies>
+    
 
     <build>
         <resources>
