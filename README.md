@@ -1,87 +1,103 @@
-🧩 CEP-API — Consulta de Endereço com API Mockada e Persistência de Logs
-📘 Visão Geral
-A CEP-API é uma aplicação Spring Boot (Java 17) desenvolvida para realizar consultas de endereços via CEP, acessando uma API externa (ViaCEP) e salvando logs de consulta em um banco de dados PostgreSQL.
+🧩 CEP-API — Consulta de Endereço com API Mockada e Persistência de Logs 📘
+Visão Geral
+A CEP-API é uma aplicação Spring Boot (Java 17) que permite consulta de endereços via CEP, utilizando a API externa ViaCEP e armazenando logs dessas consultas em um banco PostgreSQL.
 
-Durante os testes, o sistema utiliza WireMock para simular a API externa, permitindo testes offline e previsíveis. O projeto segue princípios SOLID, boas práticas de arquitetura limpa, e inclui testes de integração automatizados.
+Durante testes, o sistema usa WireMock para simular a API externa, permitindo testes offline e previsíveis. O projeto segue os princípios SOLID, arquitetura limpa e inclui testes de integração automatizados.
 
 🧭 Fluxo da Aplicação
-O cliente faz uma requisição:
+O cliente faz uma requisição.
 
-➡️ O Controller chama o Service.
-➡️ O Service usa o CepClient para consultar a API (real ou mock).
-➡️ A resposta é gravada no banco de dados cep_logger_db.
-➡️ E o resultado é retornado ao cliente.
+O Controller chama o Service.
+
+O Service usa o CepClient para consultar a API (real ou mock).
+
+A resposta é salva no banco de dados cep_logger_db.
+
+O resultado é retornado ao cliente.
 
 ⚙️ Tecnologias Utilizadas
+Java 17
+
+Spring Boot
+
+PostgreSQL
+
+WireMock
+
+Lombok
+
+Maven
+
+Swagger
+
 ▶️ Como Executar Localmente
-🧱 1️⃣ Criar o banco de dados PostgreSQL
-⚙️ 2️⃣ Configurar o banco no application.properties
-Configuração do banco:
+Criar o banco de dados PostgreSQL com o nome cep_logger_db.
 
-Configuração do JPA:
+Configurar o banco no application.properties com a URL, usuário, senha e configurações JPA adequadas.
 
-🧰 3️⃣ Adicionar Lombok
-Dependência no pom.xml:
+Adicionar a dependência Lombok no pom.xml, com escopo provided.
 
-⚠️ O escopo provided indica que o Lombok é necessário apenas em tempo de compilação, não em produção.
+Configurar a IDE para habilitar processamento de anotações Lombok:
 
-🧩 4️⃣ Configuração da IDE
-🔹 IntelliJ IDEA
+Em IntelliJ IDEA: instalar plugin Lombok e ativar ‘Enable annotation processing’.
 
-Vá em File → Settings → Plugins.
+Em Eclipse/STS: instalar plugin Lombok e reiniciar IDE.
 
-Busque por “Lombok” e clique em Install.
+Rodar a aplicação pela IDE ou pelo comando Maven ./mvnw spring-boot:run.
 
-Em Build, Execution, Deployment → Compiler → Annotation Processors, ative:
+Testar a API via navegador ou Postman nos endpoints disponíveis.
 
-✅ “Enable annotation processing”
+Rodar os testes automatizados com WireMock usando ./mvnw test.
 
-🔹 Eclipse / STS
-
-Baixe em .
-
-Execute o .jar e aponte para o diretório de instalação do Eclipse.
-
-Reinicie a IDE e confirme que as anotações (@Data, @Builder, etc.) estão habilitadas.
-
-🚀 5️⃣ Rodar a aplicação
-🌐 6️⃣ Testar via navegador ou Postman
-🧪 7️⃣ Rodar os testes com WireMock
 🌍 Endpoints Disponíveis
+Consulte a documentação Swagger acessando /swagger-ui.html na aplicação.
+
 📄 Exemplo de Retorno
+Exemplo típico de resposta JSON contendo dados de endereço a partir do CEP:
+
+CEP: 01001-000
+Logradouro: Praça da Sé
+Complemento: lado ímpar
+Bairro: Sé
+Localidade: São Paulo
+UF: SP
+IBGE: 3550308
+GIA: 1004
+DDD: 11
+SIAFI: 7107
+
 🧾 Banco de Dados
-Tabela: log_consulta
+A tabela log_consulta armazena os logs das consultas de CEP feitas pela aplicação.
 
 🧩 Diagrama da Solução
+O diagrama apresenta o fluxo da aplicação entre cliente, controller, service, client externo (real ou mock) e banco de dados.
+
 🌐 Acesso ao Swagger
-🔗 
+A interface de documentação está disponível em http://localhost:8080/swagger-ui.html.
 
 📘 Repositório GitHub
-👉 
+O código completo está disponível no repositório:
+
+https://github.com/seuusuario/cep-api
 
 🚀 Futuras Melhorias e Diferenciais
-Funcionalidades planejadas para versões futuras — diferenciais técnicos e boas práticas de infraestrutura.
+Integração com Docker via docker-compose para containers PostgreSQL e WireMock, facilitando setup local e CI/CD.
 
-🐳 Integração com Docker
-Containers para PostgreSQL e WireMock usando docker-compose.
+Integração com serviços AWS:
 
-Comando: docker-compose up -d
+RDS para banco de dados na nuvem.
 
-Benefício: Facilita portabilidade e setup do ambiente local (dev/teste/CI/CD).
+ECS ou Elastic Beanstalk para deploy da aplicação.
 
-☁️ Integração com AWS
-AWS RDS (PostgreSQL): Persistência de dados em nuvem.
+CloudWatch para monitoramento e métricas.
 
-AWS ECS / Elastic Beanstalk: Deploy da aplicação.
+S3 para armazenamento de relatórios e backups.
 
-AWS CloudWatch: Monitoramento e métricas de performance.
+✨ Autor
+Jurandir Campos
 
-AWS S3: Armazenamento de relatórios e backups dos logs.
+📅 Versão
+1.0.0
 
-✨ Autor: Jurandir Campos
-
-📅 Versão: 1.0.0
-
-📄 Licença: MIT
-
-🧩 Projeto: CEP-API — Mock e Logs com Spring Boot
+📄 Licença
+MIT License
