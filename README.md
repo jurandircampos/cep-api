@@ -1,5 +1,6 @@
 # cep-api
 🧩 Projeto CEP — Consulta de Endereço com API Mockada e Persistência de Logs
+
 📘 Visão Geral
 
 Esta aplicação Spring Boot (Java 17) realiza a busca de endereços via CEP, consultando uma API externa (ViaCEP) e salvando logs das consultas em banco de dados.
@@ -14,6 +15,7 @@ A resposta é retornada e salva no banco (cep_logger_db).
 O serviço retorna o JSON ao cliente.
 
 ⚙️ Tecnologias Utilizadas
+
 Tecnologia	            Função
 Java 17	                Linguagem principal
 Spring Boot 3.x	        Framework backend
@@ -25,15 +27,19 @@ Maven	                Gerenciador de dependências
 
 ▶️ Como Executar Localmente
     #Criar o banco de dados PostgreSQL
+    
     Create database cep_logger_db;
 
 1️⃣ Configurar banco PostgreSQL
+
 # Configuração do banco PostgreSQL
+
 spring.datasource.url=jdbc:postgresql://localhost:5433/cep_logger_db
 spring.datasource.username=postgres
 spring.datasource.password=11111 
 
 # Configuração do JPA
+
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
