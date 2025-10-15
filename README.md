@@ -179,20 +179,7 @@ A tabela `cep_query_log` armazena os logs das consultas de CEP feitas pela aplic
 | `cep`       | VARCHAR(9) | CEP consultado          |
 | `erro`      | JSON       | Dados retornados da API |
 | `data_hora` | TIMESTAMP  | Data e hora da consulta |
----etc
-
-## 🧩 **Diagrama da Solução**
-
-flowchart TD
-
-A[Cliente / Postman / Navegador] -->|GET /api/cep/{cep}| B[Controller: CepController]
-B --> C[Service: CepService]
-C --> D[CepClient (RestTemplate)]
-D -->|Consulta externa| E[API Mockada (WireMock) / ViaCEP]
-C --> F[(Banco de Dados)]
-F -->|Grava log| C
-C --> B
-B --> A
+...
 
 
 ## 🌐 **Acesso ao Swagger**
