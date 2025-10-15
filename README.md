@@ -7,22 +7,6 @@ Durante os testes, a API externa é simulada com WireMock, garantindo previsibil
 
 O projeto utiliza de boas práticas de arquitetura, uso de SOLID e testes de integração automatizados.
 
-🧠 Fluxo Explicado:
-```mermaid
-A[Cliente / Postman / Navegador] -->|GET /api/cep/{cep}| B[Controller: CepController]
-B --> C[Service: CepService]
-C --> D[CepClient (RestTemplate)]
-D -->|Consulta externa| E[API Mockada (WireMock) / ViaCEP]
-C --> F[(Banco de Dados)]
-E --> D
-D --> C
-C --> B
-B --> A
-
-subgraph LOG
-F[(Tabela: log_consulta)]
-end
-
 O cliente faz uma requisição GET /api/cep/{cep}.
 O controller chama o service.
 O service usa o CepClient para acessar a API (real ou mock).
@@ -90,7 +74,6 @@ http://localhost:8080/api/cep/18040260
 🌐 Acesso ao Swagger 
 http://localhost:8080/swagger-ui/index.html
 
-
 📘 Repositório GitHub
 
 🔗 https://github.com/jurandircampos/cep-api
@@ -100,7 +83,6 @@ http://localhost:8080/swagger-ui/index.html
 🔮 Estas funcionalidades ainda não foram implementadas, mas fazem parte da visão futura do projeto e representam diferenciais técnicos que poderão ser agregados em versões seguintes:
 
 🐳 Integração com Docker
-
 Criação de containers para o PostgreSQL e o WireMock, utilizando docker-compose para subir todo o ambiente local com um único comando:
 
     docker-compose up -d
@@ -110,7 +92,6 @@ Facilitar a portabilidade e o setup do projeto em diferentes ambientes (dev, tes
 ☁️ Integração com AWS
 
 Implantação futura na AWS para estudo de cloud:
-
 AWS RDS (PostgreSQL) → persistência em nuvem.
 AWS ECS ou Elastic Beanstalk → deploy da aplicação Spring Boot.
 AWS CloudWatch → monitoramento e logs das consultas de CEP.
