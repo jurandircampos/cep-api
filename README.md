@@ -27,6 +27,12 @@ O projeto segue os **princípios SOLID**, aplica **arquitetura limpa** e inclui 
 4. A resposta é salva no banco de dados `cep_logger_db`
 5. O resultado é retornado ao cliente no formato **JSON**
 
+## 🧭 Arquitetura da Solução
+
+<p align="center">
+  <img src="docs/solution.png" alt="Arquitetura da Solução CEP-API" width="800"/>
+</p>
+
 ---
 
 ## ⚙️ **Tecnologias Utilizadas**
