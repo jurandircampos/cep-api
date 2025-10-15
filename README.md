@@ -198,7 +198,7 @@ B --> A
 
 ## 📘 **Repositório GitHub**
 
-🔗 [https://github.com/seuusuario/cep-api](https://github.com/seuusuario/cep-api)
+🔗 [https://github.com/jurandircampos/cep-api](https://github.com/jurandircampos/cep-api)
 
 ---
 
