@@ -44,6 +44,46 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
 
+⚙️ Dependência Lombok
+
+O projeto utiliza o Project Lombok
+ para simplificar o código, eliminando a necessidade de escrever manualmente getters, setters, construtores e outros métodos comuns.
+
+📦 Adicionando ao pom.xml
+<!-- Lombok - Reduz código boilerplate -->
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.32</version>
+    <scope>provided</scope>
+</dependency>
+
+
+⚠️ Observação:
+O escopo provided indica que o Lombok é necessário apenas em tempo de compilação, não em produção.
+
+🧰 Configuração da IDE
+🔹 IntelliJ IDEA
+
+Vá em File → Settings → Plugins
+
+Busque por “Lombok”
+
+
+Clique em Install
+
+Em Settings → Build, Execution, Deployment → Compiler → Annotation Processors, ative:
+✅ “Enable annotation processing”
+
+🔹 Eclipse / STS
+
+Baixe o instalador do Lombok em https://projectlombok.org/download
+
+Execute o .jar e aponte para o diretório do Eclipse.
+
+Reinicie a IDE.
+
+Verifique se há suporte a anotações (Ex: @Data, @Builder, @Getter, @Setter, @NoArgsConstructor, etc.).
 2️⃣ Rodar aplicação
 mvn spring-boot:run
 
